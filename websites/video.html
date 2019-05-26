@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" type="text/css" href="../css/master.css">
+  <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+  <title>Videos</title>
+  <script type="text/javascript" src="../js/jquery.js"></script>
+  <script type="text/javascript" src="../js/jquery-ui.js"></script>
+</head>
+<body>
+<div class="vacio" id="particles-js">
+  <div id="menu">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">RandomInterestingThings</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="../index.html">Inicio</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="video.html">Videos<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Temas
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="musica.html">Musica</a>
+          <a class="dropdown-item" href="danza.html">Danza</a>
+          <a class="dropdown-item" href="juegos.html">Juegos</a>
+          <a class="dropdown-item" href="red_social.html">Redes sociales</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Proximamente</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+</div>
+<div id="fb-root"></div>
+ <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v3.2"></script>
+</div>
+</div>
+  <div id="container">
+    <div id="body">
+      <h1>Introducción</h1>
+      <div id="video">
+        <video autoplay="autoplay" poster="#" controls id="vcs_1" width="100%" height="100%">
+          <source src="../sources/video/ve_1.mp4" type="video/mp4" id="sm_2">
+              <source src="../sources/video/vcs_1.webm" type="video/webm">
+          Tu navegador no implementa el elemento <code>video</code>.
+        </video>
+      </div>
+      <h2>video de prueba</h2>
+    </div>
+    <div id="fb-comment">
+    <div class="fb-comments" data-width="100%" data-mobile="Auto-detected" data-href="http://127.0.0.1:3000/index.html" data-numposts="5"></div>
+    </div>
+  </div>
+  <script type="text/javascript" src="../js/bootstrap.js"></script>
+  <script type="text/javascript" src="../js/particles.js"></script>
+  <script type="text/javascript" src="../js/particulas.js"></script>
+  <script type="text/javascript" src="../js/sm.js"></script>
+</body>
+</html>
