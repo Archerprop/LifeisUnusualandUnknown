@@ -21,7 +21,7 @@
       }
     }
   }else {
-    if (move_upload_file($save,'sources/profiles/'.$nickname.'/'.$name)) {
+    if (move_uploaded_file($save,'sources/profiles/'.$nickname.'/'.$name)) {
     }
   }
     //Envio de informacion
