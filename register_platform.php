@@ -3,6 +3,9 @@
  include 'connect.php';
   $sql_r = "SELECT id,nivel FROM rango where nivel=2 or nivel=1 order by nivel ASC";
   $query = mysqli_query($mysqli,$sql_r);
+   if (isset($_GET['check-in'])<=1) {
+
+   }
 ?>
 <!DOCTYPE html>
 <html lang="en">
