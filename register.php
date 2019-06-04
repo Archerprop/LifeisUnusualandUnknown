@@ -33,5 +33,5 @@
         echo "Error: " . $sql . "<br>" . $mysqli->error;
     }
   mysqli_close($mysqli);
-   header('location:index.php');
+   header('location:index.php?check-in=1');
 ?>
