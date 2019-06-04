@@ -3,7 +3,7 @@
   session_start();
   $nickname = $_POST['nickname'];
   $clave = $_POST['clave'];
-  $clave = sha1($clave);
+  $clave = md5($clave);
   $_SESSION['nickname'] = $nickname;
   print $sql_l = "SELECT nickname FROM usuario WHERE nickname='".$nickname."' and clave='$clave'";
   $query_c = mysqli_query($mysqli,$sql_l);
