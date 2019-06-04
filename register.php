@@ -6,7 +6,7 @@
   $correo = $_POST['correo'];
   $nombre = $_POST['nombre'];
   $apellido = $_POST['apellido'];
-  $password =sha1($_POST['password']);
+  $password =md5($_POST['password']);
   $nickname = $_POST['nickname'];
   $rango = $_POST['rango'];
   $_SESSION['nickname'] = $nickname;
