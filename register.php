@@ -10,18 +10,18 @@
   $nickname = $_POST['nickname'];
   $rango = $_POST['rango'];
   $_SESSION['nickname'] = $nickname;
-  $name = $_FILES['file']['name'];
-  $save = $_FILES['file'] ['tmp_name'];
-  $file_url = 'sources/profiles/'.$nickname.'/'.$name;
-  if (!file_exists('sources/'.'profiles/'.$_SESSION['nickname'])) {
-    mkdir('sources/'.'profiles/'.$_SESSION['nickname'],0777, true);
-    if (file_exists('sources/'.'profiles/'.$_SESSION['nickname'])) {
-      if (move_uploaded_file($save,'sources/profiles/'.$nickname .'/'.$name)) {
+  $name = 'sources/profiles/'.$nickname.'/'.basename($_FILES["file"]["name"]);
+  $file_url = $name;
+  if (!file_exists('sources/'.'profiles/'.$nickname)) {
+     mkdir('sources/'.'profiles/'.$_SESSION['nickname'],0777, true);
+    if (file_exists('sources/'.'profiles/'.$nickname)) {
+      if (move_uploaded_file($_FILES["file"]["tmp_name"],$name)) {
         echo "creado archivo";
       }
     }
   }else {
-    if (move_uploaded_file($save,'sources/profiles/'.$nickname.'/'.$name)) {
+    if (move_uploaded_file($_FILES["file"]["tmp_name"],$name)) {
+      echo "creado archivo";
     }
   }
     //Envio de informacion
@@ -33,5 +33,6 @@
         echo "Error: " . $sql . "<br>" . $mysqli->error;
     }
   mysqli_close($mysqli);
-   header('location:index.php?check-in=1');
+  session_destroy();
+   //header('location:index.php');
 ?>
