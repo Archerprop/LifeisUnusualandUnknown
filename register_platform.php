@@ -3,9 +3,9 @@
  include 'connect.php';
   $sql_r = "SELECT id,nivel FROM rango where nivel=2 or nivel=1 order by nivel ASC";
   $query = mysqli_query($mysqli,$sql_r);
-   if (isset($_GET['check-in'])<=1) {
+  if (isset($_GET['check-in'])<=1) {
 
-   }
+  }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -49,7 +49,7 @@
           </select>
     <!--archivo imagen de usuario-->
         <div class="form-group">
-          <input type="file" class="file" accept=".jpg,.png,.gif" name="file" onchange="file_view()" id="file_charge" value="<?php echo explode("/",PHP_SELF) ?>">
+          <input type="file" class="file" accept=".jpg,.png,.gif" name="file" onchange="file_view()" id="file_charge" >
           <p id="file_update">Selecciona tu imagen de perfil...</p>
           <div id="image"></div>
         </div>
