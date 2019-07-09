@@ -31,8 +31,12 @@
       <div class="form_r header">
         <form id="form" action="register.php" method="post" enctype="multipart/form-data">
           <h1 class="register">SimpleIntelligentAssistant</h1>
-          <input type="text" name="nombre" maxlength="20" placeholder="Nombre" class="space" id="name">
-          <input type="text" name="apellido" maxlength="20" placeholder="Apellido" class="space" id="surname">
+          <div class="row">
+            <input type="text" name="nombre" maxlength="20" placeholder="Nombre" class="space" id="name">
+          </div>
+        <div class="row">
+         <input type="text" name="apellido" maxlength="20" placeholder="Apellido" class="space" id="surname">
+        </div> 
           <input type="text" name="nickname" maxlength="20" placeholder="Nickname" class="space" id="nickname">
           <input type="text" name="password" maxlength="20" placeholder="Contraseña" class="space" id="password">
           <input type="email" name="correo" placeholder="Correo electronico" class="space" id="email">
