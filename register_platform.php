@@ -40,10 +40,10 @@
           <div class="row">
             <input type="text" name="nickname" maxlength="20" placeholder="Nickname" class="space" id="nickname">
           </div>
-          <div class="">
+          <div class="row">
             <input type="text" name="password" maxlength="20" placeholder="Contraseña" class="space" id="password">
           </div>
-          <div class="">
+          <div class="row">
             <input type="email" name="correo" placeholder="Correo electronico" class="space" id="email">
           </div>
     <!--selector del nivel del usuario-->
