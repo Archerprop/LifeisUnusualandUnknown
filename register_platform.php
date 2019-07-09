@@ -37,9 +37,15 @@
           <div class="row">
             <input type="text" name="apellido" maxlength="20" placeholder="Apellido" class="space" id="surname">
           </div>
-          <input type="text" name="nickname" maxlength="20" placeholder="Nickname" class="space" id="nickname">
-          <input type="text" name="password" maxlength="20" placeholder="Contraseña" class="space" id="password">
-          <input type="email" name="correo" placeholder="Correo electronico" class="space" id="email">
+          <div class="row">
+            <input type="text" name="nickname" maxlength="20" placeholder="Nickname" class="space" id="nickname">
+          </div>
+          <div class="">
+            <input type="text" name="password" maxlength="20" placeholder="Contraseña" class="space" id="password">
+          </div>
+          <div class="">
+            <input type="email" name="correo" placeholder="Correo electronico" class="space" id="email">
+          </div>
     <!--selector del nivel del usuario-->
           <select class="space" name="rango" id="rango">
             <option class="space">Elige tu nivel...</option>
