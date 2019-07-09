@@ -47,16 +47,18 @@
             <input type="email" name="correo" placeholder="Correo electronico" class="space" id="email">
           </div>
     <!--selector del nivel del usuario-->
-          <select class="space" name="rango" id="rango">
-            <option class="space">Elige tu nivel...</option>
-              <?php
-                while ($data = mysqli_fetch_array($query)) {
-              ?>
-            <option class="space" value="<?php echo $data['id']?>">Level <?php echo $data['nivel']?></option>
-              <?php
-                }
-              ?>
-          </select>
+          <div class="row">
+            <select class="space" name="rango" id="rango">
+              <option class="space">Elige tu nivel...</option>
+                <?php
+                  while ($data = mysqli_fetch_array($query)) {
+                ?>
+              <option class="space" value="<?php echo $data['id']?>">Level <?php echo $data['nivel']?></option>
+                <?php
+                  }
+                ?>
+            </select>
+          </div>
     <!--archivo imagen de usuario-->
         <div class="form-group">
           <input type="file" class="file" accept=".jpg,.png,.gif" name="file" onchange="file_view()" id="file_charge" >
