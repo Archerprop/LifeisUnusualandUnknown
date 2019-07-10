@@ -11,7 +11,7 @@ body {
   background-size: 100%;
 }
 body.font {
-  overflow: hidden;
+  overflow: none;
 }
 .header {
   height: 100vh;
