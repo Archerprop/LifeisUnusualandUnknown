@@ -31,45 +31,49 @@
       <div class="form_r header">
         <form id="form" action="register.php" method="post" enctype="multipart/form-data">
           <h1 class="register">SimpleIntelligentAssistant</h1>
-          <div class="row">
-            <input type="text" name="nombre" maxlength="20" placeholder="Nombre" class="space" id="name">
+          <center>
+            <div class="row">
+              <input type="text" name="nombre" maxlength="20" placeholder="Nombre" class="space" id="name">
+            </div>
+            <div class="row">
+              <input type="text" name="apellido" maxlength="20" placeholder="Apellido" class="space" id="surname">
+            </div>
+            <div class="row">
+              <input type="text" name="nickname" maxlength="20" placeholder="Nickname" class="space" id="nickname">
+            </div>
+            <div class="row">
+              <input type="text" name="password" maxlength="20" placeholder="Contraseña" class="space" id="password">
+            </div>
+            <div class="row">
+              <input type="email" name="correo" placeholder="Correo electronico" class="space" id="email">
+            </div>
+      <!--selector del nivel del usuario-->
+            <div class="row">
+              <select class="space" name="rango" id="rango">
+                <option class="space">Elige tu nivel...</option>
+                  <?php
+                    while ($data = mysqli_fetch_array($query)) {
+                  ?>
+                <option class="space" value="<?php echo $data['id']?>">Level <?php echo $data['nivel']?></option>
+                  <?php
+                    }
+                  ?>
+              </select>
+            </div>
+      <!--archivo imagen de usuario-->
+      </center>
+          <div class="form-group">
+            <div class="upload">
+              <input type="file" class="file" accept=".jpg,.png,.gif" name="file" onchange="file_view()" id="file_charge">
+              <div class="text"><p id="file_update">Selecciona tu imagen de perfil...</p></div>
+            </div>
+            <div id="image"></div>
           </div>
-          <div class="row">
-            <input type="text" name="apellido" maxlength="20" placeholder="Apellido" class="space" id="surname">
+          <div class="btns">
+            <input type="submit" name="enviar" value="Enviar" class="boton" id="newregister">
+            <input type="reset" name="resetear" value="limpiar" class="boton">
+            <p class="confirm">Ya estas inscrito? Presiona <a href="index.php">aqui</a></p>
           </div>
-          <div class="row">
-            <input type="text" name="nickname" maxlength="20" placeholder="Nickname" class="space" id="nickname">
-          </div>
-          <div class="row">
-            <input type="text" name="password" maxlength="20" placeholder="Contraseña" class="space" id="password">
-          </div>
-          <div class="row">
-            <input type="email" name="correo" placeholder="Correo electronico" class="space" id="email">
-          </div>
-    <!--selector del nivel del usuario-->
-          <div class="row">
-            <select class="space" name="rango" id="rango">
-              <option class="space">Elige tu nivel...</option>
-                <?php
-                  while ($data = mysqli_fetch_array($query)) {
-                ?>
-              <option class="space" value="<?php echo $data['id']?>">Level <?php echo $data['nivel']?></option>
-                <?php
-                  }
-                ?>
-            </select>
-          </div>
-    <!--archivo imagen de usuario-->
-        <div class="form-group">
-          <input type="file" class="file" accept=".jpg,.png,.gif" name="file" onchange="file_view()" id="file_charge" >
-          <p id="file_update">Selecciona tu imagen de perfil...</p>
-          <div id="image"></div>
-        </div>
-        <div id="btn">
-          <input type="submit" name="enviar" value="Enviar" class="boton" id="newregister">
-          <input type="reset" name="resetear" value="limpiar" class="boton">
-          <p class="confirm">Ya estas inscrito? Presiona <a href="index.php">aqui</a></p>
-        </div>
     </form>
   </div>
   </header>
