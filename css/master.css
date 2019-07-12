@@ -183,7 +183,7 @@ form .space:hover{
   border-color:#ffffff;
 }
 form .boton {
-  margin: 2px auto;
+  margin: 5px auto;
   width: 135px;
   height: 40px;
   background: rgb(60,60,60);
@@ -281,6 +281,11 @@ form .btns {
   display: inline-table;
   width: 800px;
   height: 100px;
+}
+form .taker {
+  display: inline-table;
+  width: 200px;
+  align-items: center;
 }
 form input#archive{
   width: 100%;

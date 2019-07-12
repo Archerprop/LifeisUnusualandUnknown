@@ -68,10 +68,12 @@
               <div class="text"><p id="file_update">Selecciona tu imagen de perfil...</p></div>
             </div>
             <div id="image"></div>
+            <div class="taker">
+              <input type="submit" name="enviar" value="Enviar" class="boton" id="newregister">
+              <input type="reset" name="resetear" value="limpiar" class="boton">
+            </div>
           </div>
           <div class="btns">
-            <input type="submit" name="enviar" value="Enviar" class="boton" id="newregister">
-            <input type="reset" name="resetear" value="limpiar" class="boton">
             <p class="confirm">Ya estas inscrito? Presiona <a href="index.php">aqui</a></p>
           </div>
     </form>
