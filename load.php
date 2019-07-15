@@ -8,11 +8,11 @@
   <link rel="stylesheet" href="css/master.css">
   <title>Formulario</title>
 </head>
-<body>
+<body style="overflow:hidden;">
   <div class="load_vacio" id="particles-js">
   <div class="preload">
     <div class="logo">
-      Load<span style="color:#ffffff;">ing</span>
+      <span style="color:#12CBC4">Load</span><span style="color:#1289A7;">ing</span>
     </div>
     <div class="loader-frame">
       <div class="loader_1" id="loader_1"></div>
