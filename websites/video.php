@@ -1,11 +1,3 @@
-<?php
-  session_start();
-  $sesion = $_SESSION['nickname'];
-  if ($sesion == null || $sesion = '') {
-    header('location:index.php');
-    die();
-  }
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,7 +10,6 @@
   <script type="text/javascript" src="js/jquery-ui.js"></script>
 </head>
 <body>
-  <audio id="sm_2" src="sources/audio/sm_1.mp3" autoplay="autoplay" loop="loop"></audio>
   <div class="content">
     <?php include 'search_bar.php' ?>
   </div>
