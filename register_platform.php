@@ -48,7 +48,7 @@
               <input type="text" name="password" maxlength="20" placeholder="Contraseña" class="space" id="password">
             </div>
             <div class="row">
-              <input type="text" name="password" maxlength="20" placeholder="Repetir constraseña" class="space" id="password">
+              <input type="text" name="password-check" maxlength="20" placeholder="Repetir constraseña" class="space" id="password">
             </div>
             <div class="row">
               <input type="email" name="correo" placeholder="Correo electronico" class="space" id="email">
@@ -79,7 +79,7 @@
               <input type="reset" name="resetear" value="limpiar" class="boton">
             </div>
           </div>
-          <div class="btns">
+          <div class="return">
             <p class="confirm">Ya estas inscrito? Presiona <a href="index.php">aqui</a></p>
           </div>
     </form>

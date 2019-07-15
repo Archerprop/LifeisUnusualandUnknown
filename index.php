@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="css/master.css">
   <link href="https://fonts.googleapis.com/css?family=Pinyon+Script" rel="stylesheet">
   <title>SimpleIntelligentAssistant</title>
+  <?php require_once"scripts.php"; ?>
 </head>
 <body class="font">
   <!--<audio id="sm_2" src="sources/audio/sm_3.mp3" autoplay="autoplay" loop="loop"></audio>-->
@@ -18,11 +19,17 @@
     <div class="form_r_l header">
       <form class="space" action="login.php" method="post">
         <h1 class="login"><strong>Ingresar</strong></h1>
-        <input type="text" name="nickname" placeholder="Usuario" class="space_l" id="user">
+        <div class="row">
+          <input type="text" name="nickname" placeholder="Usuario" class="space_l" id="user">
+        </div>
+        <div class="row">
         <input type="password" name="clave" placeholder="Contraseña" class="space_l" id="password">
-        <input type="submit" value="Ingresar" class="btn_login" id="btn_login">
-        <div class="btn_login">
-        <span><a href="register_platform.php" style="text-decoration:none;">registrarse</a></span>
+        </div>
+        <div class="taker_l">
+          <input type="submit" value="Ingresar" class="size" id="btn_login">
+        </div>
+        <div class="return_l">
+          <p class="confirm">Ya estas inscrito? Presiona <a href="register_platform.php">aqui</a></p>
         </div>
       </form>
     </div>
