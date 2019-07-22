@@ -71,7 +71,8 @@
           <div class="form-group">
             <div class="upload">
               <!--accept=".jpg,.png,.gif"-->
-              <input type="file" class="file"  name="file" onchange="file_view()" id="file_charge">
+              <input type="hidden" name="MAX_FILE_SIZE" value="30000"/>
+              <input type="file" class="file"  name="upload_file" onchange="file_view()" id="file_charge">
               <div class="text"><p id="file_update">Selecciona tu imagen de perfil...</p></div>
             </div>
             <div id="image"></div>

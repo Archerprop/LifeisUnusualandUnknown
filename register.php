@@ -13,20 +13,23 @@
   $rango = $_POST['rango'];
   $_SESSION['nickname'] = $nickname;
   if ($password == $password_check) {
-  print $name = 'sources/profiles/'.$nickname.'/';
+    $name_first = '/'.'sources/'.'profiles/'.$nickname.'/';
+  print $name = $name_first.basename($_FILES["upload_file"]["name"]);
   $file_url = $name;
-    if (!file_exists('sources/'.'profiles/'.$nickname)) {
-       mkdir('sources/'.'profiles/'.$_SESSION['nickname'],0777, true);
-      if (file_exists('sources/'.'profiles/'.$nickname)) {
-        if (move_uploaded_file($_FILES["file"]["tmp_name"],$name)) {
+    if (!file_exists('sources/'.'profiles/'.$nickname.'/')) {
+       mkdir('sources/'.'profiles/'.$nickname,0777,true);
+      if (file_exists('sources/'.'profiles/'.$nickname.'/')) {
+        if (move_uploaded_file($_FILES['upload_file']['tmp_name'],$name)) {
           echo "creado archivo";
         }else{
-          print "error";
+          print $_FILES['upload_file']['error'];
         }
       }
     }else {
-      if (move_uploaded_file($_FILES["file"]["tmp_name"],$name)) {
+      if (move_uploaded_file($_FILES["upload_file"]["tmp_name"],$name)) {
         echo "creado archivo";
+      }else {
+        print "<h1>".$_FILES['upload_file']['error']."</h1>";
       }
     }
       //Envio de informacion
