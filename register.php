@@ -13,7 +13,7 @@
   $rango = $_POST['rango'];
   $_SESSION['nickname'] = $nickname;
   if ($password == $password_check) {
-  $name = 'sources/profiles/'.$nickname.'/'.basename($_FILES["file"]["name"]);
+  $name = 'sources/profiles/'.$nickname.'/'.$_FILES["file"]["name"];
   $file_url = $name;
     if (!file_exists('sources/'.'profiles/'.$nickname)) {
        mkdir('sources/'.'profiles/'.$_SESSION['nickname'],0777, true);
