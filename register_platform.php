@@ -70,7 +70,8 @@
       </center>
           <div class="form-group">
             <div class="upload">
-              <input type="file" class="file" accept=".jpg,.png,.gif" name="file" onchange="file_view()" id="file_charge">
+              <!--accept=".jpg,.png,.gif"-->
+              <input type="file" class="file"  name="file" onchange="file_view()" id="file_charge">
               <div class="text"><p id="file_update">Selecciona tu imagen de perfil...</p></div>
             </div>
             <div id="image"></div>

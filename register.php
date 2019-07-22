@@ -13,13 +13,15 @@
   $rango = $_POST['rango'];
   $_SESSION['nickname'] = $nickname;
   if ($password == $password_check) {
-  $name = 'sources/profiles/'.$nickname.'/'.basename($_FILES["file"]["name"]);
+  print $name = 'sources/profiles/'.$nickname.'/';
   $file_url = $name;
     if (!file_exists('sources/'.'profiles/'.$nickname)) {
        mkdir('sources/'.'profiles/'.$_SESSION['nickname'],0777, true);
       if (file_exists('sources/'.'profiles/'.$nickname)) {
         if (move_uploaded_file($_FILES["file"]["tmp_name"],$name)) {
           echo "creado archivo";
+        }else{
+          print "error";
         }
       }
     }else {
@@ -37,7 +39,7 @@
       }
     mysqli_close($mysqli);
     session_destroy();
-    header('location:index.php');
+    //header('location:index.php');
   }else {
     header('location:register_platform.php');
   }
