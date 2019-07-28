@@ -1,8 +1,9 @@
 ﻿<?php
 //conexion con el servidor y seleccion del rango
  include 'connect.php';
-  $sql_r = "SELECT id,nivel FROM rango where nivel=2 or nivel=1 order by nivel ASC";
-  $query = mysqli_query($mysqli,$sql_r);
+  $sql_r = "SELECT id,nivel FROM rango where nivel=1 and nivel=2 and nivel=0 order by nivel ASC";
+  $query = $mysqli->prepare($sql_r);
+  $query->execute();
   if (isset($_GET['check-in'])<=1) {
 
   }
