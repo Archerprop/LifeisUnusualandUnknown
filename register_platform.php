@@ -1,7 +1,7 @@
 ﻿<?php
 //conexion con el servidor y seleccion del rango
- include 'connect.php';
-  $sql_r = "SELECT id,nivel FROM rango where nivel=1 and nivel=2 and nivel=0 order by nivel ASC";
+ include 'structure/connect.php';
+  $sql_r = "SELECT id,nivel FROM rango where nivel=1 and nivel=2 order by nivel ASC";
   $query = $mysqli->prepare($sql_r);
   $query->execute();
   if (isset($_GET['check-in'])<=1) {
@@ -30,7 +30,7 @@
     </div>
     <div class="header-overlay"></div>
       <div class="form_r header">
-        <form id="form" action="register.php" method="post" enctype="multipart/form-data">
+        <form id="form" action="structure/register.php" method="post" enctype="multipart/form-data">
           <h1 class="register">SimpleIntelligentAssistant</h1>
           <center>
             <div class="row">
