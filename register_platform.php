@@ -1,9 +1,8 @@
 ﻿<?php
 //conexion con el servidor y seleccion del rango
  include 'structure/connect.php';
-  $sql_r = "SELECT id,nivel FROM rango where nivel=1 and nivel=2 order by nivel ASC";
-  $query = $mysqli->prepare($sql_r);
-  $query->execute();
+  $sql_r = "SELECT *    FROM rango where not id=1 order by nivel DESC";
+  $query = $mysqli->query($sql_r);
   if (isset($_GET['check-in'])<=1) {
 
   }
@@ -30,7 +29,7 @@
     </div>
     <div class="header-overlay"></div>
       <div class="form_r header">
-        <form id="form" action="structure/register.php" method="post" enctype="multipart/form-data">
+        <form id="form" action="structure/file_update.php" method="post" enctype="multipart/form-data">
           <h1 class="register">SimpleIntelligentAssistant</h1>
           <center>
             <div class="row">
@@ -59,9 +58,9 @@
               <select class="space" name="rango" id="rango">
                 <option class="space">Elige tu nivel...</option>
                   <?php
-                    while ($data = mysqli_fetch_array($query)) {
+                    while ($data = $query->fetch()) {
                   ?>
-                <option class="space" value="<?php echo $data['id']?>">Level <?php echo $data['nivel']?></option>
+                <option class="space" value="<?php echo $data['id']?>"><?php echo $data['name']?></option>
                   <?php
                     }
                   ?>
@@ -73,7 +72,7 @@
             <div class="upload">
               <!--accept=".jpg,.png,.gif"-->
               <input type="hidden" name="MAX_FILE_SIZE" value="30000"/>
-              <input type="file" class="file"  name="upload_file" onchange="file_view()" id="file_charge">
+              <input type="file" class="file"  name="upload_file"  onchange="file_view()" id="file_charge">
               <div class="text"><p id="file_update">Selecciona tu imagen de perfil...</p></div>
             </div>
             <div id="image"></div>

@@ -17,13 +17,13 @@
       //Envio de informacion
       print_r($_POST);
       $query = $mysqli->prepare("INSERT INTO usuario (correo,nombre,apellido,clave,nickname,rango,file,id) VALUES ('$correo','$nombre','$apellido','$password','$nickname','$rango','$file_url',$id)");
-      $query->execute() or die('Hola');
+      $query->execute() or die(header('Error al conectar'));
       if ($mysqli->query($sql) === TRUE) {
           echo "Usuario creado";
       } else {
           echo "Error: " . $sql . "<br>" . $mysqli->error;
       }
-      $name_first = 'sources/'.'profiles/'.$nickname.'/';
+      $name_first = '../'.'sources/'.'profiles/'.$nickname.'/';
       $name = $name_first.basename($_FILES["upload_file"]["name"]);
         if (!file_exists('sources/'.'profiles/'.$nickname.'/')) {
            mkdir('sources/'.'profiles/'.$nickname,0777,true);
