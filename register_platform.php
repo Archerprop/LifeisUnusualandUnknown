@@ -1,11 +1,8 @@
 ﻿<?php
 //conexion con el servidor y seleccion del rango
- include 'structure/connect.php';
+ include 'connect.php';
   $sql_r = "SELECT *    FROM rango where not id=1 order by nivel DESC";
   $query = $mysqli->query($sql_r);
-  if (isset($_GET['check-in'])<=1) {
-
-  }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -29,7 +26,7 @@
     </div>
     <div class="header-overlay"></div>
       <div class="form_r header">
-        <form id="form" action="structure/file_update.php" method="post" enctype="multipart/form-data">
+        <form id="form" method="POST" enctype="multipart/form-data" action="register.php" data-ajax="false">
           <h1 class="register">SimpleIntelligentAssistant</h1>
           <center>
             <div class="row">
@@ -48,7 +45,7 @@
               <input type="text" name="password" maxlength="20" placeholder="Contraseña" class="space" id="password">
             </div>
             <div class="row">
-              <input type="text" name="password-check" maxlength="20" placeholder="Repetir constraseña" class="space" id="password">
+              <input type="text" name="password-check" maxlength="20" placeholder="Repetir constraseña" class="space check-in" id="password">
             </div>
             <div class="row">
               <input type="email" name="correo" placeholder="Correo electronico" class="space" id="email">
@@ -71,8 +68,8 @@
           <div class="form-group">
             <div class="upload">
               <!--accept=".jpg,.png,.gif"-->
-              <input type="hidden" name="MAX_FILE_SIZE" value="30000"/>
-              <input type="file" class="file"  name="upload_file"  onchange="file_view()" id="file_charge">
+              <input type="hidden" name="MAX_FILE_SIZE" value="1000000"/>
+              <input type="file" class="file"  name="profile"  onchange="file_view()" id="file_charge">
               <div class="text"><p id="file_update">Selecciona tu imagen de perfil...</p></div>
             </div>
             <div id="image"></div>
@@ -89,47 +86,11 @@
   </header>
   <p class="copyright">Video by Drew Rae from Pexels</p>
   <script type="text/javascript" src="js/master.js"></script>
-  <script type="text/javascript" src="js/sm.js"></script>
 </body>
 </html>
 <script type="text/javascript">
   function file_view() {
   var file = document.getElementById('file_charge').value;
   document.getElementById('file_update').innerHTML = document.getElementById('file_charge').value;
-}
- (function() {
-   'use strict'
- var file_url = document.getElementById('file_charge');
- var formData = new FormData();
- file_url.addEventListener('change', function (e) {
-   for (var i = 0; i < file_url.files.length; i++) {
-     var thumbnail_id = Math.floor( Math.random() * 40000) + '_' + Date.now();
-     createThumbnail(file_url, i, thumbnail_id);
-     formData.append(thumbnail_id,file_url.files[i]);
-   }
-
-   e.target.value = '';
- });
- var createThumbnail = function (file_url,iterator,thumbnail_id) {
-   var file_thumbnail = document.createElement('div');
-   file_thumbnail.classList.add('file_thumbnail', thumbnail_id);
-   file_thumbnail.dataset.id = thumbnail_id;
-   file_thumbnail.setAttribute('style', `background-image: url(${ URL.createObjectURL(file_url.files[iterator])})`);
-   document.getElementById('image').appendChild(file_thumbnail);
-   closeThumbnail(thumbnail_id);
- }
- var closeThumbnail = function (thumbnail_id) {
-   var closer = document.createElement('div');
-   closer.classList.add('close-image');
-   closer.innerText ='X';
-   document.getElementsByClassName(thumbnail_id)[0].appendChild(closer);
- }
-
- document.body.addEventListener('click', function (e) {
-   if (e.target.classList.contains('close-image')) {
-     e.target.parentNode.remove();
-     formData.delete(e.target.parentNode.dataset.id);
-   }
- });
-})();
+  }
 </script>
