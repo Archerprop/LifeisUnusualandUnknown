@@ -36,7 +36,7 @@
               <input type="text" name="apellido" maxlength="20" placeholder="Apellido" class="space" id="surname">
             </div>
             <div class="row">
-              <input type="text" name="nickname" maxlength="20" placeholder="Nickname" class="space" id="nickname">
+              <input type="text" name="nickname" maxlength="20" placeholder="Nombre de usuario" class="space" id="nickname">
             </div>
             <div class="row">
               <input type="number" name="id" maxlength="20" placeholder="Numero de identificacion" class="space" id="id">

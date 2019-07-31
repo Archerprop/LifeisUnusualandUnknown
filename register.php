@@ -27,9 +27,21 @@
     if ($result) {
         echo 'El usuario existe!';
       }else {
+        //Generador de codigo de activacion
+        $string = "";
+        $chance = "1234567890abcdefghijklmnopqrstuvwxyz_";
+        $i = 0;
+        while ($i < 23) {
+          $char = substr($chance, mt_rand(0, strlen($chance)-1),1);
+          $string .= $char;
+          $i++;
+        }
+        echo $string."<br>";
+        //variables Comprobacion
+          $exist = 0;
         //Envio de informacion
         print_r($_POST);
-        $query = $mysqli->prepare("INSERT INTO usuario (correo,nombre,apellido,clave,nickname,rango,file,id) VALUES ('$correo','$nombre','$apellido','$password','$nickname','$rango','$ruta',$id)");
+        $query = $mysqli->prepare("INSERT INTO usuario (correo,nombre,apellido,clave,nickname,rango,file,id,id_exist_db,id_active_code) VALUES ('$correo','$nombre','$apellido','$password','$nickname','$rango','$ruta',$id,$exist,'$string')");
         $query->execute();
           if (!file_exists('sources/'.'profiles/'.$profile.'/')) {
              mkdir('sources/'.'profiles/'.$nickname,0777,true);
