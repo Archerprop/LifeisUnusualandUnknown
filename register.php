@@ -39,9 +39,10 @@
         echo $string."<br>";
         //variables Comprobacion
           $exist = 0;
+          $status = 'Disabled';
         //Envio de informacion
         print_r($_POST);
-        $query = $mysqli->prepare("INSERT INTO usuario (correo,nombre,apellido,clave,nickname,rango,file,id,id_exist_db,id_active_code) VALUES ('$correo','$nombre','$apellido','$password','$nickname','$rango','$ruta',$id,$exist,'$string')");
+        $query = $mysqli->prepare("INSERT INTO usuario (correo,nombre,apellido,clave,nickname,rango,file,id,id_exist_db,id_active_code,status) VALUES ('$correo','$nombre','$apellido','$password','$nickname','$rango','$ruta',$id,$exist,'$string','$status')");
         $query->execute();
           if (!file_exists('sources/'.'profiles/'.$profile.'/')) {
              mkdir('sources/'.'profiles/'.$nickname,0777,true);
@@ -59,6 +60,31 @@
               print "<h1>".$_FILES['profile']['error']."</h1>";
             }
           }
+          //enviar Correo
+          $para = $_POST['correo'];
+
+          $asunto = "Link de activacion";
+
+          $mensaje = "<html lang='es'>"
+                    ."<head>"
+                    ."<title>Link de activacion del Usuario</title>"
+                    ."<meta charset='utf-8'/>"
+                    ."</head>"
+                    ."<body>"
+                    ."Gracias por usar nuestro servicios, si desea acceder, debe activar su "
+                    ."usuario haciendo link en el siguiente enlace: <br>"
+                    ."<a href='http://localhost/sia/link_activation.php?link=$string'>"
+                    ."Activar</a>";
+          $mensaje  .="</body>"
+                    ."</html>";
+          //Para enviar en codigo html esta la cabecera
+          $cabeceras  = 'MIME-Version: 1.0'."\r\n";
+          $cabeceras .= 'Content-type: text/html; charset=iso-8859-1'."\r\n";
+          //otras cabeceras
+          $cabeceras .='From: Cristian Marin B <hungryheavenworld@gmail.com>'."\r\n";
+          //Se envia el mensaje
+          mail($para, $asunto, $mensaje, $cabeceras);
+      //destruccion de sesion
       session_destroy();
       header('location:index.php');
     }
