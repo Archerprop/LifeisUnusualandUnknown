@@ -1,7 +1,7 @@
 ﻿<?php
 //conexion con el servidor y seleccion del rango
  include 'connect.php';
-  $sql_r = "SELECT *    FROM rango where not id=1 order by nivel DESC";
+  $sql_r = "SELECT * FROM rango where not id=1 order by nivel DESC";
   $query = $mysqli->query($sql_r);
 ?>
 <!DOCTYPE html>
@@ -22,7 +22,7 @@
   <!--Formulario para registrarse-->
   <header class=" header content">
     <div class="header-video">
-      <video src="sources/video/font_5.mp4" id="sm_2" autoplay loop></video>
+      <!--<video src="sources/video/font_5.mp4" id="sm_2" autoplay loop></video>-->
     </div>
     <div class="header-overlay"></div>
       <div class="form_r header">
@@ -68,7 +68,7 @@
           <div class="form-group">
             <div class="upload">
               <!--accept=".jpg,.png,.gif"-->
-              <input type="hidden" name="MAX_FILE_SIZE" value="1000000"/>
+              <input type="hidden" name="MAX_FILE_SIZE" value="3000000"/>
               <input type="file" class="file"  name="profile"  onchange="file_view()" id="file_charge">
               <div class="text"><p id="file_update">Selecciona tu imagen de perfil...</p></div>
             </div>
