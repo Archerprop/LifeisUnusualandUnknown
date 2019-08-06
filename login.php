@@ -19,7 +19,7 @@
   $validate = $value['status'];
   if ($data > 0) {
     if ($value['status']=='Enabled') {
-      //header("location:load.php");
+      header("location:load.php");
       print "funciona<br>";
       print $data;
     }else {
@@ -27,7 +27,7 @@
      header("location:index.php?check=$validate");
     }
   }else {
-        //header("location:index.php");
+        header("location:index.php");
         print "no funciona";
         print $data;
   }

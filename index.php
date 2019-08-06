@@ -1,3 +1,11 @@
+<?php
+  //adquirimos el comprobante
+  $check = '';
+  $validate = null;
+  if ($check !='') {
+    $validate = $_GET['check'];
+  }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,6 +32,15 @@
         </div>
         <div class="row">
         <input type="password" name="clave" placeholder="Contraseña" class="space_l" id="password">
+        </div>
+        <div class="row_text">
+          <?php
+          if ($_GET['check']!='') {
+            if ($_GET['check']=='Disabled') {
+              echo "<p>El usuario no esta activado!!</p>";
+            }
+          }
+          ?>
         </div>
         <div class="taker_l">
           <input type="submit" value="Ingresar" class="size" id="btn_login">
