@@ -37,12 +37,21 @@
           $i++;
         }
         echo $string."<br>";
+        //generador Codigo de admin en caso de ser admin
+        //$code = "";
+        //$mix = "1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        //$a = 0;
+        //while ($a < 6) {
+          //$mode = substr($mix, mt_rand(0, strlen($mix)-1),1);
+          //$code .= $mode;
+          //$a++;
+        //}
+        //echo $code."<br>";
         //variables Comprobacion
-          $exist = 0;
           $status = 'Disabled';
         //Envio de informacion
         print_r($_POST);
-        $query = $mysqli->prepare("INSERT INTO usuario (correo,nombre,apellido,clave,nickname,rango,file,id,id_exist_db,id_active_code,status) VALUES ('$correo','$nombre','$apellido','$password','$nickname','$rango','$ruta',$id,$exist,'$string','$status')");
+        $query = $mysqli->prepare("INSERT INTO usuario (correo,nombre,apellido,clave,nickname,rango,file,id,id_active_code,status) VALUES ('$correo','$nombre','$apellido','$password','$nickname','$rango','$ruta',$id,'$string','$status')");
         $query->execute();
           if (!file_exists('sources/'.'profiles/'.$profile.'/')) {
              mkdir('sources/'.'profiles/'.$nickname,0777,true);
@@ -86,7 +95,7 @@
           mail($para, $asunto, $mensaje, $cabeceras);
       //destruccion de sesion
       session_destroy();
-      header('location:index.php');
+      header('location:login_screen.php?send=0&check=Stand');
     }
   }else {
     header('location:register_platform.php');

@@ -12,19 +12,25 @@
   $query_c->execute();
   $data = $query_c->fetchColumn();
   //comprobacion si la cuenta esta activa
-  $validation = "SELECT status FROM usuario WHERE nickname='".$nickname."' and clave='$clave'";
+  $validation = "SELECT * FROM usuario WHERE nickname='".$nickname."' and clave='$clave'";
   $query = $mysqli->query($validation);
   $value = $query->fetch();
-  echo $value['status'];
-  $validate = $value['status'];
+  //echo $value['status'].'<br>';
+  //echo $value['rango'];
   if ($data > 0) {
     if ($value['status']=='Enabled') {
-      header("location:load.php");
-      print "funciona<br>";
-      print $data;
+      //redireccion por cargo
+      $rank = 1;
+      if ($value['rango']==$rank) {
+        header("location:admin/admin_session.php?nickname=".$nickname);
+      }else{
+        header("location:load.php");
+        print "funciona<br>";
+        print $data;
+      }
     }else {
 
-     header("location:index.php?check=$validate");
+     header("location:login_screen.php?check=$validate&send=1");
     }
   }else {
         header("location:index.php");

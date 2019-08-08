@@ -30,30 +30,30 @@
           <h1 class="register">SimpleIntelligentAssistant</h1>
           <center>
             <div class="row">
-              <input type="text" name="nombre" maxlength="20" placeholder="Nombre" class="space" id="name">
+              <input type="text" name="nombre" maxlength="20" placeholder="Nombre" class="space" id="name" required>
             </div>
             <div class="row">
-              <input type="text" name="apellido" maxlength="20" placeholder="Apellido" class="space" id="surname">
+              <input type="text" name="apellido" maxlength="20" placeholder="Apellido" class="space" id="surname" required>
             </div>
             <div class="row">
-              <input type="text" name="nickname" maxlength="20" placeholder="Nombre de usuario" class="space" id="nickname">
+              <input type="text" name="nickname" maxlength="20" placeholder="Nombre de usuario" class="space" id="nickname" required>
             </div>
             <div class="row">
-              <input type="number" name="id" maxlength="20" placeholder="Numero de identificacion" class="space" id="id">
+              <input type="number" name="id" maxlength="20" placeholder="Numero de identificacion" class="space" id="id" required>
             </div>
             <div class="row">
-              <input type="text" name="password" maxlength="20" placeholder="Contraseña" class="space" id="password">
+              <input type="text" name="password" maxlength="20" placeholder="Contraseña" class="space" id="password" required>
             </div>
             <div class="row">
-              <input type="text" name="password-check" maxlength="20" placeholder="Repetir constraseña" class="space check-in" id="password">
+              <input type="text" name="password-check" maxlength="20" placeholder="Repetir constraseña" class="space check-in" id="password" required>
             </div>
             <div class="row">
-              <input type="email" name="correo" placeholder="Correo electronico" class="space" id="email">
+              <input type="email" name="correo" placeholder="Correo electronico" class="space" id="email" required>
             </div>
       <!--selector del nivel del usuario-->
             <div class="row">
-              <select class="space" name="rango" id="rango">
-                <option class="space">Elige tu nivel...</option>
+              <select class="space" name="rango" id="rango" required>
+                <option class="space" selected>Elige tu nivel...</option>
                   <?php
                     while ($data = $query->fetch()) {
                   ?>
