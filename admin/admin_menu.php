@@ -37,7 +37,7 @@
                 <a class="nav-link" href="websites/video.html">Videos</a>
               </li>
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Temas</a>
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Opciones</a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <a class="dropdown-item" href="website_admin/register_menu.php">Registros</a>
                   <a class="dropdown-item" href="website_admin/register_menu.php">Usuarios</a>
@@ -54,7 +54,7 @@
               <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
             </form>
           </div>
-          <a class="btn btn-primary" href="close_connect.php">Cerrar sesion</a>
+          <a class="btn btn-primary" href="../close_connect.php">Cerrar sesion</a>
         </nav>
       </div>
     </div>

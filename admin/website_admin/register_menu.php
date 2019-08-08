@@ -54,7 +54,7 @@
               <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
             </form>
           </div>
-          <a class="btn btn-primary" href="close_connect.php">Cerrar sesion</a>
+          <a class="btn btn-primary" href="../../close_connect.php">Cerrar sesion</a>
         </nav>
       </div>
     </div>
