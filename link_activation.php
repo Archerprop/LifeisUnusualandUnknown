@@ -1,9 +1,7 @@
 <?php
-  echo $_GET['link'];
-
-  //activamos el Usuario
-
   include 'connect.php';
+  echo $_GET['link'];
+  //activamos el Usuario
   $status = 'Enabled';
   $code = $_GET['link'];
   $sth = $mysqli->prepare("UPDATE usuario SET status='$status' WHERE id_active_code='$code'");

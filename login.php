@@ -23,7 +23,11 @@
       $rank = 1;
       if ($value['rango']==$rank) {
         header("location:admin/admin_session.php?nickname=".$nickname);
-      }else{
+      }elseif ($value['rango']==$rank+1) {
+        header("location:load.php");
+        print "funciona<br>";
+        print $data;
+      }elseif ($value['rango']==$rank+2) {
         header("location:load.php");
         print "funciona<br>";
         print $data;

@@ -31,7 +31,7 @@
   <div class="content">
     <div class="vacio" id="particles-js">
 
-      <?php $link = "register";include '../../menu_bar.php'; ?>
+      <?php $link = "platform";include '../../menu_bar.php'; ?>
     </div>
   </div>
 <div id="fb-root"></div>
