@@ -1,4 +1,4 @@
-<?php
+,<?php
 //archivo de conexion
   include 'connect.php';
   session_start();
@@ -20,6 +20,7 @@
   $max_size = $_POST['MAX_FILE_SIZE'];
   $type = $_FILES['profile']['type'];
   $ruta = "sources/profiles/".$profile."/".$name;
+  //codigo registro
   $sth = $mysqli->prepare("SELECT * FROM usuario WHERE nickname='$nickname'");
   $sth->execute();
   $result = $sth->fetchAll();

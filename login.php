@@ -2,10 +2,10 @@
   include 'connect.php';
   session_start();
   //variables
-  $nickname = $_POST['nickname'];
   $clave = $_POST['clave'];
   $clave = md5($clave);
   $_SESSION['nickname'] = $nickname;
+  $nickname = $_POST['nickname'];
   //comprobacion si la cuenta existe en la base de datos
   $sql_l = "SELECT COUNT(*) FROM usuario WHERE nickname='".$nickname."' and clave='$clave'";
   $query_c = $mysqli->prepare($sql_l);

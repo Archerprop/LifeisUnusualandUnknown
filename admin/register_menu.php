@@ -1,8 +1,12 @@
 <?php
   session_start();
+  if(isset($_SESSION['nickname']))
   $sesion = $_SESSION['nickname'];
+  else{
+  $sesion = null;
+  }
   if ($sesion == null || $sesion = '') {
-    header('location:../index.php');
+    print"<script>alert('Hola mundo!')</script>";
     die();
   }
 ?>
@@ -19,28 +23,19 @@
   <title>SimpleIntelligentAssistant</title>
 </head>
 <body>
-  <div class="content">
-    <div class="vacio" id="particles-js">
-      <?php $link = "menu";include '../menu_bar.php'; ?>
-    </div>
-  </div>
- <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v3.2"></script>
-  <div id="container">
-    <div id="body">
-      <h1>Bienvenido <?php echo $_SESSION['nickname'];  ?></h1>
-      <br>
-      <?php
-      if ( $link == 'menu') {
-      echo "<iframe src='../new.pdf' width='800' height='800'></iframe>";
-    }elseif ($link == 'config') {
-      include '../config.php';
-    }
-      ?>
-    </div>
-  </div>
   <script type="text/javascript" src="../js/bootstrap.js"></script>
   <script type="text/javascript" src="../js/particles.js"></script>
   <script type="text/javascript" src="../js/particulas.js"></script>
   <script type="text/javascript" src="../js/sm.js"></script>
+  <div class="content">
+    <div class="vacio" id="particles-js">
+      <?php $link = "register";include '../menu_bar.php'; ?>
+    </div>
+  </div>
+  <div id="container">
+    <div id="body">
+      <h1>Bienvenido <?php echo $_SESSION['nickname'];  ?></h1>
+    </div>
+  </div>
 </body>
 </html>

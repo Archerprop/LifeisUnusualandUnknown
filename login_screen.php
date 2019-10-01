@@ -50,7 +50,7 @@
           <input type="submit" value="Ingresar" class="size" id="btn_login">
         </div>
         <div class="return_l">
-          <p class="confirm">Ya estas inscrito? Presiona <a href="register_platform.php">aqui</a></p>
+          <p class="confirm">No estas inscrito? Presiona <a href="register_platform.php">aqui</a></p>
         </div>
       </form>
     </div>

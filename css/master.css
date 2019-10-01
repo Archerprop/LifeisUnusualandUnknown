@@ -107,7 +107,7 @@ form h1.register {
   font-weight:normal;
   font-size: 40pt;
   margin: 30px 0px;
-  font-family: 'Pinyon Script', cursive;
+  font-family: 'Times, Times New Roman, serif';
 }
 form h1.login {
   color: var(--color);
@@ -115,7 +115,7 @@ form h1.login {
   font-weight:normal;
   font-size: 30pt;
   margin: 20px 0px;
-  font-family: 'Pinyon Script', cursive;
+  font-family: 'Times, Times New Roman, serif';
 }
 form p.confirm{
   color: var(--color);
@@ -316,8 +316,90 @@ div.vacio{
   text-align: center;
   margin: 10px;
 }
-form .code_form {
-
+table.table_menu{
+  width: 100%;
+  margin: 5px 10px 5px 10px;
+}
+div.box_menu {
+  border: 1px rgba(18, 203, 196, 0.5) solid;
+  border-radius: 7px;
+  height: 100%;
+}
+div.box_menu > iframe {
+  border: none;
+  margin: 10px;
+}
+div.column {
+  height: 100%;
+  width: 200px;
+}
+div.btn_config{
+  width: 100%;
+  height: 80px;
+  text-align: center;
+  border-bottom: 2px solid rgba(110, 110, 110, 0.45);
+  transition: 0.5s;
+}
+div.btn_config:hover {
+  background-color: rgba(0, 0, 0, 0.35);
+  font-size: 25px;
+}
+div.btn_config > a {
+  font-size: 20px;
+  width: 100%;
+  height: 100%;
+  color: #000000;
+  text-decoration: none;
+  font-family: 'Times, Times New Roman, serif';
+}
+.box_config{
+  width: 750px;
+  height: 100%;
+  float: right;
+}
+/*estilos barra de menu*/
+img.btn_profile {
+  width: 35px;
+  height: 35px;
+  border-radius: 10px;
+  border: 2px outset transparent;
+  transition: 0.2s;
+}
+img.btn_profile:hover{
+  opacity: 0.8;
+  border: 2px outset rgb(18, 203, 196);
+  transition: 0.2s;
+}
+img.image_profile {
+  margin: 10px auto;
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+  border: 2px outset rgba(110, 110, 110, 0.45);
+}
+div.image {
+  height: 140px;
+  width: 100%;
+}
+div.row_user > a.button_user {
+  text-decoration: none;
+  color:rgba(18, 137, 167);
+  transition: 0.5s;
+}
+div.row_user > a.button_user:hover{
+  color:rgba(18, 203, 196);
+  transition: 0.5s;
+}
+div.row_user {
+  height: 50px;
+  width: 100%;
+  border-bottom: 1px solid rgba(110, 110, 110, 0.45);
+}
+div#content {
+  text-align: center;
+  display: none;
+  width: 100%;
+  height: 100%;
 }
 /*estilos carga*/
 .preload{
@@ -383,7 +465,7 @@ div#container{
   width: 100%;
   height: 1200px;
   background-color: #ffffff;
-  border-radius: 7px;
+  border-bottom: 1px solid rgba(110, 110, 110, 0.45);
 }
 div#body{
   width: 960px;
@@ -421,9 +503,6 @@ p.text_p {
 }
 video#vcs_1{
   width: 100%;
-}
-.btn-primary {
-  margin: 5px 5px 5px 5px;
 }
 @keyframes loader {
   from {transform: rotate(0deg);}
