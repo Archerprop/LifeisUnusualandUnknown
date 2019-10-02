@@ -1,10 +1,10 @@
 <?php
-  session_start();
+session_start();
   $_SESSION['nickname'] = $_GET['nickname'];
   $sesion = $_SESSION['nickname'];
 
   if ($sesion == null || $sesion = '') {
-    header('location:login_screen.php');
+    header('location:../login_screen.php?send=0&check=Stand');
     die();
   }
 ?>

@@ -1,8 +1,6 @@
 <?php
   $select = $_GET['config'];
-  $name = $_SESSION['nickname'];
   if ($select=='info') {
-    echo "info";
     echo "<center>";
     echo "<h1>Terminos y condiciones</h1>";
     echo "<br>";
@@ -11,10 +9,9 @@
     echo "<p>   </p>";
     echo "</center>";
   }elseif ($select=='style') {
-    echo "style";
     echo "<center>";
     echo "<div>";
-    echo "<iframe src='menu_bar.php' width='600px' height='70px'>";
+    echo "<iframe src='menu_bar_model.php' width='600px' height='50px'>";
     echo "</iframe>";
     echo "</div>";
     echo "<br>";

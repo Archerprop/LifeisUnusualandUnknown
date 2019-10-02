@@ -3,6 +3,7 @@
   $sesion = $_SESSION['nickname'];
   if ($sesion == null || $sesion = '') {
     header('location:index.php');
+    session_destroy();
     die();
   }
 ?>
@@ -21,7 +22,7 @@
 <body>
   <div class="content">
     <div class="vacio" id="particles-js">
-      <?php $link = "menu";include 'menu_bar.php'; ?>
+      <?php $link = "menu";include 'menu_bar.php' ?>
     </div>
   </div>
    <div id="container">

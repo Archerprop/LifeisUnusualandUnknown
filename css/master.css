@@ -453,7 +453,7 @@ div.vacio:hover{
 background-color: rgba(0, 0, 0, 0.53);
 transition: 1.5s;
 }
-}div.load_vacio{
+div.load_vacio{
   width: 100%;
   transition: 1.5s;
 }
