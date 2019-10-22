@@ -31,7 +31,7 @@
       <iframe class='box_config' id="box_config" src="" style="border: transparent"></iframe>
       <div class='column'>
   <div class='btn_config'><a href="#info" id="info">Acerca de</a></div>
-  <div class='btn_config'><a href="#style" id="style">Personalizacion</a></div>
+  <div class='btn_config'><a href="#style" id="style">Personalización</a></div>
   <div class='btn_config'><a href="#account" id="account">Cuenta</a></div>
   <div class='btn_config'><a href="#delete" id="delete">Borrar cuenta</a></div>
       </div>

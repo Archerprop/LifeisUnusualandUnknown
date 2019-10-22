@@ -7,22 +7,15 @@ session_start();
   $value = $check->fetch();
 ?>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" type="text/css" href="css/master.css">
   <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
   <script type="text/javascript" src="js/jquery.js"></script>
   <script type="text/javascript" src="js/jquery-ui.js"></script>
-  <title>SimpleIntelligentAssistant</title>
 </head>
-<body style='background-color: #ffffff'>
+<body>
 <div id="menu" style="z-index:1">
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="admin_menu.php"><?php echo $_SESSION['nickname']; ?></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
@@ -59,25 +52,12 @@ session_start();
     </div>
   </nav>
 </div>
-<div id="menu_profile" style=" background-color: #ffffff; width: 250px;height: 0px; transition: 0.5s;position: fixed; right: 0px; top: 56px; border-bottom-left-radius: 7px; border: 1px solid rgba(110, 110, 110, 0.45);">
-  <div id="content" style="display:none; transition: display 1s">
+<div id="menu_profile" style=" background-color: #ffffff; width: 250px;height: 250px; transition: 0.5s;position: fixed; right: 0px; top: 56px; border-bottom-left-radius: 7px; border: 1px solid rgba(110, 110, 110, 0.45);">
+  <div id="content" style="display:block; transition: display 1s">
     <div class="image"><img class="image_profile" src="<?php echo '/sia/'.$value['file'] ?>"><a class="button_user" href="../close_connect.php"></div>
     <div class="row_user"><a class="button_user" href="../config.php" >configuracion</a></div>
    <div class="row_user"><a class="button_user" href="close_connect.php">Cerrar sesion</a></div>
  </div>
 </div>
-<script type="text/javascript">
-  function menu(){
-    var obj = document.getElementById('menu_profile');
-    var content = document.getElementById('content');
-    if (obj.style.height=="0px") {
-      obj.style.height="250px";
-      setTimeout(function() {content.style.display="block"},300);
-    }else if (obj.style.height=="250px") {
-      obj.style.height="0px";
-      setTimeout(function() {content.style.display="none"},100);
-    }
-  }
-</script>
   <script type="text/javascript" src="js/bootstrap.js"></script>
-  </body>
+</body>

@@ -49,9 +49,9 @@
         <div class="taker_l">
           <input type="submit" value="Ingresar" class="size" id="btn_login">
         </div>
-        <div class="return_l">
-          <p class="confirm">No estas inscrito? Presiona <a href="register_platform.php">aqui</a></p>
-        </div>
+        <!--<div class="return_l">
+          //<p class="confirm">No estas inscrito? Presiona <a href="register_platform.php">aqui</a></p>
+        </div>-->
       </form>
     </div>
   </header>

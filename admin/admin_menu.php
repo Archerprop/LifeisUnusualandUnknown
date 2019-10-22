@@ -1,4 +1,6 @@
 <?php
+  $page = 2;
+  $level = 'admin';
   session_start();
   $sesion = $_SESSION['nickname'];
   if ($sesion == null || $sesion = '') {
@@ -24,8 +26,7 @@
       <?php $link = "menu";include '../menu_bar.php'; ?>
     </div>
   </div>
- <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v3.2"></script>
-  <div id="container">
+   <div id="container">
     <div id="body">
       <h1>Bienvenido <?php echo $_SESSION['nickname'];  ?></h1>
       <br>

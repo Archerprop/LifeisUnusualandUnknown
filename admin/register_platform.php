@@ -1,8 +1,16 @@
 ﻿<?php
 //conexion con el servidor y seleccion del rango
- include 'connect.php';
-  $sql_r = "SELECT * FROM rango where not id=1 order by nivel DESC";
+  session_start();
+ include '../connect.php';
+  $sql_r = "SELECT * FROM rango";
   $query = $mysqli->query($sql_r);
+  $_SESSION['nickname'] = $_GET['nickname'];
+  $sesion = $_SESSION['nickname'];
+
+  if ($sesion == null || $sesion = '') {
+    header('location:../login_screen.php?send=0&check=Stand');
+    die();
+  }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -10,13 +18,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="css/master.css">
+  <link rel="stylesheet" href="../css/master.css">
   <link href="https://fonts.googleapis.com/css?family=Pinyon+Script" rel="stylesheet">
-  <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico"/>
-  <script type="text/javascript" src="js/jquery.js"></script>
-  <script type="text/javascript" src="js/jquery-ui.js"></script>
+  <link rel="shortcut icon" type="image/x-icon" href="../images/favicon.ico"/>
+  <script type="text/javascript" src="../js/jquery.js"></script>
+  <script type="text/javascript" src="../js/jquery-ui.js"></script>
   <title>Formulario</title>
-  <?php require_once"scripts.php"; ?>
+  <?php require_once"../scripts.php"; ?>
 </head>
 <body class="font">
   <!--Formulario para registrarse-->
@@ -79,13 +87,13 @@
             </div>
           </div>
           <div class="return">
-            <p class="confirm">Ya estas inscrito? Presiona <a href="index.php">aqui</a></p>
+            <p class="confirm">Ya estas inscrito? Presiona <a href="../index.php">aqui</a></p>
           </div>
     </form>
   </div>
   </header>
   <p class="copyright">Video by Drew Rae from Pexels</p>
-  <script type="text/javascript" src="js/master.js"></script>
+  <script type="text/javascript" src="../js/master.js"></script>
 </body>
 </html>
 <script type="text/javascript">

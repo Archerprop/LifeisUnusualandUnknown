@@ -27,6 +27,7 @@ session_start();
       </div>
       <div class="row code">
         <input type="submit" value="Verificar" class="boton">
+        <input type="button" value="Regresar  " class="boton" style='text-align: center; cursor: pointer;' onclick='window.location.href="../index.php"'>
       </div>
     </form>
   </div>

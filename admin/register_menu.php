@@ -6,7 +6,7 @@
   $sesion = null;
   }
   if ($sesion == null || $sesion = '') {
-    print"<script>alert('Hola mundo!')</script>";
+    header("Location:../index.php");
     die();
   }
 ?>
@@ -29,12 +29,16 @@
   <script type="text/javascript" src="../js/sm.js"></script>
   <div class="content">
     <div class="vacio" id="particles-js">
-      <?php $link = "register";include '../menu_bar.php'; ?>
+      <?php $link = "register";   $page = 2;;include '../menu_bar.php'; ?>
     </div>
   </div>
   <div id="container">
     <div id="body">
       <h1>Bienvenido <?php echo $_SESSION['nickname'];  ?></h1>
+      <div class='form_box'>
+        <iframe src="register_platform.php" frameborder="0" style='width:100%;height:100%;'>
+        </iframe>
+      </div>
     </div>
   </div>
 </body>

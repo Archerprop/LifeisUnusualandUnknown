@@ -28,7 +28,7 @@
         print "funciona<br>";
         print $data;
       }elseif ($value['rango']==$rank+2) {
-        header("location:load.php");
+        header("location:estudiante/student_menu.php?nickname=".$nickname);
         print "funciona<br>";
         print $data;
       }

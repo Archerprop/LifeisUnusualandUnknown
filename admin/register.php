@@ -1,6 +1,6 @@
 ,<?php
 //archivo de conexion
-  include 'connect.php';
+  include '../connect.php';
   session_start();
   //variables
   $correo = $_POST['correo'];
@@ -19,7 +19,11 @@
   $size = $_FILES['profile']['size'];
   $max_size = $_POST['MAX_FILE_SIZE'];
   $type = $_FILES['profile']['type'];
-  $ruta = "sources/profiles/".$profile."/".$name;
+  if ($name != "") {
+    $ruta = "sources/profiles/".$profile."/".$name;
+  }else {
+    $ruta = null;
+  }
   //codigo registro
   $sth = $mysqli->prepare("SELECT * FROM usuario WHERE nickname='$nickname'");
   $sth->execute();
@@ -96,7 +100,7 @@
           mail($para, $asunto, $mensaje, $cabeceras);
       //destruccion de sesion
       session_destroy();
-      header('location:login_screen.php?send=0&check=Stand');
+      header('location:register_platform.php');
     }
   }else {
     header('location:register_platform.php');
