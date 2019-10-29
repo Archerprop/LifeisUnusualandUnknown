@@ -32,10 +32,13 @@
     echo "<div>";
     echo "<h2 style='color: #ff0000;'>Advertencia</h2>";
     echo "<p>Esta a punto de eliminar su cuenta. No hay opcion de recuperación.</p>";
-    echo "<input type='button' onclick='window.location.herf. 'https://www.w3schools.com value='Eliminar cuenta'>";
+    echo "<form action='delete.php' method='POST'>";
+    echo "<input type='submit' value='Eliminar cuenta'>";
+    echo "</form>";
     echo "</div>";
     echo "</center>";
   }elseif ($select==''||$select==null) {
     $_GET['config'] = 'none';
   }
 ?>
+<script src="/sia/js/close.js"></script>

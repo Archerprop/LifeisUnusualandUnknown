@@ -32,24 +32,6 @@ session_start();
         Subir archivo
       </div>
       <div class='folder'>
-        <?php
-          $nick = $_SESSION['nickname'];
-          if (file_exists('sources/'.'profiles/'.$nick.'/'.'upload/')) {
-            $open= opendir("sources/profiles/$nick/upload/");
-            $i= 0;
-            while (false !=($name = readdir($open))) {
-                $i++;
-                $file_info = pathinfo('sources/'.'profiles/'.$nick.'/'.'upload/'.$name);
-                $file_type = $file_info['extension'];
-                $file_name = $file_info['filename'];
-                if($name != "." && $name != ".."){
-        ?>
-          <div class='icon'><img src='<?php if($file_type == 'docx'){echo "images/logo_word.png";}elseif ($file_type == 'pptx') {echo "images/logo_powerpoint.png";}elseif ($file_type == 'png' || $file_type == 'jpg' || $file_type == 'jepg'){echo "sources/profiles/".$nick."/upload/".$name; } ?>' style='width:100%'><p style='font-size: 10px;'><?php echo $file_name;?></p><br><p></p><br></div>
-          <?php
-            }
-          }
-        }
-        ?>
       </div> 
     </div>
   </div>
@@ -81,6 +63,7 @@ session_start();
             {
                 formData.append('file[]', files_list[i]);
             }
+            location.reload();
             console.log(formData);
             $.ajax({
                 url:"upload.php",
@@ -94,5 +77,7 @@ session_start();
                 }
             })
         });
+        $('.folder').load('browser_file.php');
+        
     });
 </script>

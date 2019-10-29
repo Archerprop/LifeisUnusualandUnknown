@@ -4,13 +4,6 @@
  include '../connect.php';
   $sql_r = "SELECT * FROM rango";
   $query = $mysqli->query($sql_r);
-  $_SESSION['nickname'] = $_GET['nickname'];
-  $sesion = $_SESSION['nickname'];
-
-  if ($sesion == null || $sesion = '') {
-    header('location:../login_screen.php?send=0&check=Stand');
-    die();
-  }
 ?>
 <!DOCTYPE html>
 <html lang="en">

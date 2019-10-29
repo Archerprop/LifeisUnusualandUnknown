@@ -1,10 +1,16 @@
 <?php
   session_start();
-  $sesion = $_SESSION['nickname'];
+  if ($_SESSION['delete'] == null) {
+   $_SESSION['delete'] = null;
+  }elseif ($_SESSION['delete'] == 1) {
+    header('location:index.php');
+  }elseif ($_SESSION['delete'] == '' || $_SESSION['delete'] == null){
+    $sesion = $_SESSION['nickname'];   
   if ($sesion == null || $sesion = '') {
     header('location:index.php');
     session_destroy();
     die();
+  }
   }
 ?>
 <!DOCTYPE html>
@@ -20,6 +26,7 @@
   <title>SimpleIntelligentAssistant</title>
 </head>
 <body>
+<script src="/sia/js/close.js"></script>
   <div class="content">
     <div class="vacio" id="particles-js">
       <?php $link = "menu";include 'menu_bar.php' ?>

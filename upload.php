@@ -10,7 +10,6 @@ if (isset($_FILES['file']['name'][0]))
     $sql = "INSERT INTO file_name (usuario,archivo) VALUES ('$nick','$file_name')";
     $update = $mysqli->prepare($sql);
     $update->execute();
-    echo $chat = 'sources/'.'profiles/'.$nick.'/'.'upload/'.$file_name;
 
         foreach ($_FILES['file']['name'] as $keys => $values) 
         {
@@ -29,7 +28,6 @@ if (isset($_FILES['file']['name'][0]))
     }
         }
     }
-echo $output;
 
 ?>
 <style>
